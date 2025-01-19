@@ -121,9 +121,9 @@ const Past: React.FC = () => {
 
   return (
     <section>
-      <div className="font-semibold text-xl pt-20 pl-20 pr-20 border-b-[0.5px] border-b-general-outline">
+      <div className="font-semibold text-xl pt-10 sm:pt-20 sm:pl-20 sm:pr-20 border-b-[0.5px] border-b-general-outline">
         <div className="flex pb-5">
-          <h2 className="text-general-paragraphnum pr-1">[I]</h2>
+          <h2 className="text-general-paragraphnum pl-5 sm:pl-0 pr-1">[I]</h2>
           <h2 className="text-general-subtext">Past</h2>
         </div>
         <div className="relative bg-about-container mx-auto max-w-2xl rounded-tl-3xl rounded-tr-3xl border-t-[12px] border-x-[12px] pl-10 pt-10 pr-10 border-t-about-glasscontainer border-x-about-glasscontainer shadow-inner double-border">
@@ -170,12 +170,12 @@ Outside coding, I enjoy 🏉, the Premier League ⚽, and staying active. <span 
           </div>
         </div>
       </div>
-      <div className="mx-auto max-w-2xl px-3 text-general-subtext flex justify-center">
-        <div className="border-l-[0.5px] border-b-[0.5px] border-l-general-outline border-b-general-outline py-5 px-5 w-1/2">
+      <div className="sm:mx-auto sm:max-w-2xl px-3 text-general-subtext sm:flex justify-center">
+        <div className="border-l-[0.5px] border-b-[0.5px] border-l-general-outline border-b-general-outline py-5 px-5 sm:w-1/2">
           <h2 className="text-lg font-semibold pb-4">Education</h2>
           <Timeline items={educationData} />
         </div>
-        <div className="relative py-5 px-5 w-1/2 bg-internships-sectionbg overflow-hidden">
+        <div className="relative py-5 px-5 sm:w-1/2 bg-internships-sectionbg overflow-hidden">
         <img className="absolute bottom-20 w-140 h-auto blur-2xl" src={lShapeGradient} alt="" />
           <h2 className="text-lg font-bold">Internships</h2>
             <Internships items={internshipData} />

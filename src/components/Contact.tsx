@@ -3,6 +3,7 @@ import dragIcon from "../assets/icons/drag-icon.svg";
 import dragOut from "../assets/icons/drag-outline.svg";
 import dragArrow from "../assets/icons/drag-arrow.svg";
 
+import arrowIcon from '../assets/icons/social-icons/arrow-icon.svg';
 import gitIcon from '../assets/icons/social-icons/github-icon.svg';
 import igIcon from '../assets/icons/social-icons/instagram-icon.svg';
 import linkIcon from '../assets/icons/social-icons/linkedin-icon.svg';
@@ -67,19 +68,27 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className="mx-10 tablet:mx-20 py-5 tablet:py-20">
-      <div className="flex font-semibold text-xl pl-10 pt-10 tablet:pl-0 tablet:pt-20">
+    <section className="mx-5 sm:mx-20 py-0 sm:py-5">
+      <div className="flex font-semibold text-xl pt-5 sm:pl-0 sm:pt-20">
         <h2 className="text-general-paragraphnum pr-1">[III]</h2>
         <h2 className="text-general-subtext">Contact me</h2>
       </div>
       <div className="">
-          <h2 className="text-white font-semibold text-3xl tablet:text-4xl my-2">
+          <h2 className="text-white font-semibold text-2xl sm:text-4xl my-2">
             Tell me about your next project
           </h2>
-          <div className="text-general-paragraphnum flex  tablet:justify-around">
+          <div className="text-general-paragraphnum sm:flex  sm:justify-around">
             <div>
-              <h3>Send me an email</h3>
-              <div className="py-2">
+                <div className="sm:block">
+                  <h3>Send me an email</h3>
+                  <a href={`mailto:${emailAddress}`} className="visible sm:hidden">
+                  <div className="opacity-60 flex">
+                    <p className="mr-1">link</p>
+                    <img src={arrowIcon} alt="Send Email" className="w-2 h-auto mr-2" />
+                  </div>
+                                </a>
+                </div>
+              <div className="py-2 hidden sm:block">
                 <div className="relative">
                   <img ref={dragOutlineRef} src={dragOut} alt="Drag outline icon" />
                   <div
@@ -98,8 +107,8 @@ const Contact: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="mx-10 tablet:mx-0">
-              <h3 className="mb-3">Socials</h3>
+            <div className="sm:mx-10 mx-0">
+              <h3 className="sm:mb-3">Socials</h3>
               <div className="flex items-center space-x-2">
                 <a className='hover:opacity-40 transition-opacity duration-200' href="https://www.linkedin.com/in/julius-peschard-007822309/" target="_blank" rel="noopener noreferrer">
                     <img src={linkIcon} alt="LinkedIn icon" className='w-6 h-auto'/>

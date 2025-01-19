@@ -5,11 +5,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      screens: {
-        'phone': '480px',
-        'tablet': '640px',
-        'desktop': '1024px',
-      },
       fontFamily: {
         sans: ['Roboto', 'system-ui', 'sans-serif'],
       },

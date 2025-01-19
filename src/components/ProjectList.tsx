@@ -4,20 +4,20 @@ import patternBg from "../assets/patterns/patternbg.svg";
 
 import tak1 from "../assets/projects/tak-proj-1.png";
 import tak2 from "../assets/projects/tak-proj-2.png";
-import chien1 from '../assets/projects/chiens-proj-1.png';
-import chien2 from '../assets/projects/chiens-proj-2.png';
-import dig1 from '../assets/projects/dig-proj-1.png';
-import dig2 from '../assets/projects/dig-proj-2.png';
-import lyc1 from '../assets/projects/cnd-proj-1.png';
-import lyc2 from '../assets/projects/cnd-proj-2.png';
-import cswi1 from '../assets/projects/cswitch-proj-1.png';
-import cswi2 from '../assets/projects/cswitch-proj-2.png';
-import odd1 from '../assets/projects/oddg-proj-1.png';
-import odd2 from '../assets/projects/oddg-proj-2.png';
-import flow1 from '../assets/projects/flow-proj-1.png';
-import flow2 from '../assets/projects/flow-proj-2.png';
-import mac1 from '../assets/projects/mac-proj-1.png';
-import mac2 from '../assets/projects/mac-proj-2.png';
+import chien1 from "../assets/projects/chiens-proj-1.png";
+import chien2 from "../assets/projects/chiens-proj-2.png";
+import dig1 from "../assets/projects/dig-proj-1.png";
+import dig2 from "../assets/projects/dig-proj-2.png";
+import lyc1 from "../assets/projects/cnd-proj-1.png";
+import lyc2 from "../assets/projects/cnd-proj-2.png";
+import cswi1 from "../assets/projects/cswitch-proj-1.png";
+import cswi2 from "../assets/projects/cswitch-proj-2.png";
+import odd1 from "../assets/projects/oddg-proj-1.png";
+import odd2 from "../assets/projects/oddg-proj-2.png";
+import flow1 from "../assets/projects/flow-proj-1.png";
+import flow2 from "../assets/projects/flow-proj-2.png";
+import mac1 from "../assets/projects/mac-proj-1.png";
+import mac2 from "../assets/projects/mac-proj-2.png";
 
 interface Project {
   id: number;
@@ -173,15 +173,15 @@ const ProjectList: React.FC = () => {
 
   return (
     <div className="">
-      <div className="flex font-semibold text-xl pt-20 pl-20">
+      <div className="flex font-semibold text-xl pt-5 sm:pt-20 pl-5 sm:pl-20">
         <h2 className="text-general-paragraphnum pr-1">[II]</h2>
         <h2 className="text-general-subtext">Projects</h2>
       </div>
-      <ul className="relative space-y-4 py-5 px-20 mx-auto max-w-3xl">
+      <ul className="relative space-y-4 py-5 px-5 sm:px-20 mx-auto max-w-3xl">
         {projects.map((project) => (
           <li
             key={project.id}
-            className={`cursor-default px-3 tablet:px-5 py-8 tablet:py-6 rounded-md bg-about-container flex flex-col transition-all duration-700 ease-in-out ${
+            className={`cursor-default px-3 sm:px-5 py-8 sm:py-6 rounded-md bg-about-container flex flex-col transition-all duration-700 ease-in-out ${
               expandedProjectId === project.id ? "h-[700px]" : "h-[110px]"
             }`}
             onMouseEnter={() => handleMouseEnter(project.id)}
@@ -194,12 +194,12 @@ const ProjectList: React.FC = () => {
             }}
           >
             <div className="flex items-center">
-              <span className="text-general-subtext font-bold mr-4">
+              <span className="text-general-subtext font-bold mr-1 sm:mr-4">
                 {project.id.toString().padStart(2, "0")}
               </span>
               <div className="flex-grow">
                 <h3
-                  className={`text-3xl tablet:text-6xl font-bold ${
+                  className={`text-3xl sm:text-6xl font-bold ${
                     expandedProjectId === project.id
                       ? "text-white"
                       : "text-general-maintext"
@@ -208,7 +208,7 @@ const ProjectList: React.FC = () => {
                   {project.title}
                 </h3>
               </div>
-              <span className="mr-2 text-white">{project.year}</span>
+              <span className="mr-2 hidden sm:visible text-white">{project.year}</span>
               <div className="relative w-5 h-5 mt-1 rounded-full">
                 <div
                   className={`w-4 h-4 opacity-30 rounded-full absolute animate-ping ${
@@ -241,6 +241,10 @@ const ProjectList: React.FC = () => {
                   <p className="text-general-subtle mr-1">client </p>
                   {project.client}
                 </div>
+                <div className="flex mt-2">
+                  <p className="text-general-subtle visible sm:hidden mr-1">year </p>
+                  {project.year}
+                </div>
                 <div className="flex">
                   <p className="text-general-subtle mr-1">ressources </p>
                   {project.ressources.join(", ")}
@@ -251,17 +255,30 @@ const ProjectList: React.FC = () => {
                 </div>
                 <div className="flex">
                   <p className="text-general-subtle mr-1">link </p>
-                  <a className="hover:opacity-40 transition-opacity duration-200" target="_blank" href={project.link}>{project.link}</a>
+                  <a
+                    className="hover:opacity-40 transition-opacity duration-200"
+                    target="_blank"
+                    href={project.link}
+                  >
+                    {project.link}
+                  </a>
                 </div>
                 <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4">
-  <div className="flex justify-center items-center">
-    <img className=" tablet:max-w-full tablet:max-h-full" src={project.img1} alt="project image 1" />
-  </div>
-  <div className="flex justify-center items-center">
-    <img className="max-w-full max-h-full" src={project.img2} alt="project image 2" />
-  </div>
-</div>
-
+                  <div className="flex justify-center items-center">
+                    <img
+                      className="hidden sm:visible max-w-full max-h-full"
+                      src={project.img1}
+                      alt="project image 1"
+                    />
+                  </div>
+                  <div className="flex justify-center items-center">
+                    <img
+                      className="max-w-full smax-h-full"
+                      src={project.img2}
+                      alt="project image 2"
+                    />
+                  </div>
+                </div>
               </div>
             )}
           </li>

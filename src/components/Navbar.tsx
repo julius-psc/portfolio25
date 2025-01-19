@@ -4,7 +4,7 @@ import copyIcon from '../assets/icons/copy-icon.svg';
 import successIcon from '../assets/icons/success-icon.svg';
 import resume25 from '../assets/25.pdf';
 
-import arrowIcon from '../assets/icons/social-icons/cv-link-icon.svg';
+import arrowIcon from '../assets/icons/social-icons/arrow-icon.svg';
 import gitIcon from '../assets/icons/social-icons/github-icon.svg';
 import igIcon from '../assets/icons/social-icons/instagram-icon.svg';
 import linkIcon from '../assets/icons/social-icons/linkedin-icon.svg';
@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="pl-6 pr-6 pt-8 tablet:pl-6 tablet:pr-6 tablet:pt-6 desktop:pl-20 desktop:pr-20 desktop:pt-10 flex justify-between text-navbar-navtext font-light">
+    <nav className="pl-6 pr-6 pt-8 sm:pl-6 sm:pr-6 sm:pt-6 lg:pl-20 lg:pr-20 lg:pt-10 sm:flex justify-between text-navbar-navtext font-light">
 
       {/* Left side of the navbar */}
       <div className="flex items-center space-x-1">
@@ -43,7 +43,7 @@ const Navbar: React.FC = () => {
             <img src={copyIcon} alt="Copy email to clipboard icon" className="w-3 h-4 text-col" />
           )}
         </button>
-        <p className="desktop:text-base">
+        <p className="text-sm sm:text-base">
           {isCopied ? 'Copied' : 'peschardjulius03@gmail.com'}
         </p>
         <a
@@ -64,17 +64,17 @@ const Navbar: React.FC = () => {
           ,{' '}
           {new Date().toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' })}
         </p>
-        <p className="text-center text-sm md:text-base">v2025.0</p>
+        <p className="opacity-40 text-xs sm:text-center sm:text-base">v2025.0</p>
       </div>
       {/* Right side of the navbar */}
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-1 pt-1 sm:pt-0 sm:space-x-2">
         <a
           className="hover:opacity-40 transition-opacity duration-200"
           href="https://www.linkedin.com/in/julius-peschard-007822309/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={linkIcon} alt="LinkedIn icon" className="w-4 h-4" />
+          <img src={linkIcon} alt="LinkedIn icon" className="w-5 h-5 sm:w-4 sm:h-4" />
         </a>
         <a
           className="hover:opacity-40 transition-opacity duration-200"
@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={gitIcon} alt="GitHub icon" className="w-4 h-4" />
+          <img src={gitIcon} alt="GitHub icon" className="w-5 h-5 sm:w-4 sm:h-4" />
         </a>
         <a
           className="hover:opacity-40 transition-opacity duration-200"
@@ -90,7 +90,7 @@ const Navbar: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={igIcon} alt="Instagram icon" className="w-4 h-4" />
+          <img src={igIcon} alt="Instagram icon" className="w-5 h-5 sm:w-4 sm:h-4" />
         </a>
       </div>
     </nav>
