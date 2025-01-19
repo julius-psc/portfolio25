@@ -3,6 +3,10 @@ import dragIcon from "../assets/icons/drag-icon.svg";
 import dragOut from "../assets/icons/drag-outline.svg";
 import dragArrow from "../assets/icons/drag-arrow.svg";
 
+import gitIcon from '../assets/icons/social-icons/github-icon.svg';
+import igIcon from '../assets/icons/social-icons/instagram-icon.svg';
+import linkIcon from '../assets/icons/social-icons/linkedin-icon.svg';
+
 const Contact: React.FC = () => {
   const [dragPosition, setDragPosition] = useState(0);
   const isDragging = useRef(false);
@@ -98,13 +102,13 @@ const Contact: React.FC = () => {
               <h3 className="mb-3">Socials</h3>
               <div className="flex items-center space-x-2">
                 <a className='hover:opacity-40 transition-opacity duration-200' href="https://www.linkedin.com/in/julius-peschard-007822309/" target="_blank" rel="noopener noreferrer">
-                    <img src="/icons/linkedin-icon.svg" alt="LinkedIn icon" className='w-6 h-auto'/>
+                    <img src={linkIcon} alt="LinkedIn icon" className='w-6 h-auto'/>
                 </a>
                 <a className='hover:opacity-40 transition-opacity duration-200' href="https://github.com/julius-psc" target="_blank" rel="noopener noreferrer">
-                    <img src="/icons/github-icon.svg" alt="GitHub icon" className='w-6 h-auto'/>
+                    <img src={gitIcon} alt="GitHub icon" className='w-6 h-auto'/>
                 </a>
                 <a className='hover:opacity-40 transition-opacity duration-200' href="https://www.instagram.com/julius.psc/" target="_blank" rel="noopener noreferrer">
-                    <img src="/icons/instagram-icon.svg" alt="Instagram icon" className='w-6 h-auto'/>
+                    <img src={igIcon} alt="Instagram icon" className='w-6 h-auto'/>
                 </a>
             </div>
             </div>
