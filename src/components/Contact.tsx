@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [dragPosition, emailAddress]);
+  }, [dragPosition]);
 
   const handleMouseDown = (e: React.MouseEvent<HTMLImageElement>) => {
     e.preventDefault();
