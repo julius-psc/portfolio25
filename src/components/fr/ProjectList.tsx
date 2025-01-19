@@ -1,5 +1,4 @@
-import React, { useState, useContext } from "react";
-import { LanguageContext } from "../contexts/LanguageContext";
+import React, { useState } from "react";
 
 import patternBg from "../assets/patterns/patternbg.svg";
 
@@ -25,8 +24,7 @@ interface Project {
   title: string;
   year: number;
   status: "pending" | "ongoing" | "done";
-  descriptionEn: string;
-  descriptionFr: string;
+  description: string;
   colour: string;
   client: string;
   ressources: string[];
@@ -42,10 +40,8 @@ const projects: Project[] = [
     title: "FLOWIVATE",
     year: 2025,
     status: "pending",
-    descriptionEn:
+    description:
       "I am creating FLOWIVATE, a productivity dashboard designed to help users manage their daily life more effectively. With features like Pomodoro timers, task management, book tracking, and focus mode, I aim to provide a simple and empowering tool to boost discipline and productivity.",
-    descriptionFr:
-      "Je suis en train de créer FLOWIVATE, un tableau de bord de productivité conçu pour aider les utilisateurs à gérer leur vie quotidienne plus efficacement. Avec des fonctionnalités telles que le minuteur Pomodoro, la gestion des tâches, le suivi des livres et le mode concentration, j'ai pour objectif de fournir un outil simple et efficace pour stimuler la discipline et la productivité.",    
     colour: "#779FE5",
     client: "Personal",
     ressources: ["TypeScript, React, Tailwind, HTML&CSS, Figma"],
@@ -59,10 +55,8 @@ const projects: Project[] = [
     title: "ODD GEMS",
     year: 2025,
     status: "ongoing",
-    descriptionEn:
+    description:
       "I am co-creating ODD GEMS, a Roblox hub designed to streamline major existing studio games into a unified experience. The platform features account creation and a seamless integration of games, providing users with a centralized space to explore and enjoy their favorite games in one place.",
-      descriptionFr:
-      "Je co-crée ODD GEMS, un hub Roblox conçu pour rationaliser les principaux jeux de studio existants en une expérience unifiée. La plateforme propose la création de comptes et une intégration transparente des jeux, offrant aux utilisateurs un espace centralisé pour explorer et profiter de leurs jeux préférés en un seul endroit.",    
     colour: "#1C6A2E",
     client: "Personal",
     ressources: ["Javascript, LUAU, Roblox Studio, Figma"],
@@ -76,10 +70,8 @@ const projects: Project[] = [
     title: "TAKTIME",
     year: 2023,
     status: "done",
-    descriptionEn:
+    description:
       "I created social media posts and brainstormed the visual identity for TAKTIME, delivering a cohesive and engaging brand presence that aligned with the client’s vision.",
-      descriptionFr:
-      "J'ai créé des posts sur les médias sociaux et j'ai réfléchi à l'identité visuelle de TAKTIME, en fournissant une présence de marque cohérente et attrayante qui s'aligne sur la vision du client.",    
     colour: "#B23A27",
     client: "Deepak Peschard (CBO)",
     ressources: ["Figma", "Canva"],
@@ -93,10 +85,8 @@ const projects: Project[] = [
     title: "LYCEE CND",
     year: 2022,
     status: "done",
-    descriptionEn:
+    description:
       "I redesigned my highschool's website to enhance accessibility and improve its visual design. The goal was to create a more user-friendly and visually appealing platform that ensures a seamless experience for students, parents, and faculty alike.",
-      descriptionFr:
-      "J'ai remanié le site web de mon lycée pour en améliorer l'accessibilité et la conception visuelle. L'objectif était de créer une plateforme plus conviviale et visuellement attrayante qui garantisse une expérience transparente pour les élèves, les parents et le corps enseignant.",    
     colour: "#4EB5ED",
     client: "Personal",
     ressources: ["React", "Javascript, HTML&CSS, Figma"],
@@ -110,10 +100,8 @@ const projects: Project[] = [
     title: "MACORNETTE",
     year: 2023,
     status: "done",
-    descriptionEn:
+    description:
       "I created a website for MACORNETTE, with a focus on both functionality and visual design for a pasta company operating under a cloud kitchen. The goal was to provide an engaging and user-friendly platform that highlights the brand’s unique offerings while maintaining a clean, professional aesthetic.",
-      descriptionFr:
-      "J'ai créé un site web pour MACORNETTE, en mettant l'accent à la fois sur la fonctionnalité et la conception visuelle pour une entreprise de pâtes opérant sous une cuisine en nuage. L'objectif était de fournir une plateforme attrayante et conviviale qui mette en valeur les offres uniques de la marque tout en conservant une esthétique propre et professionnelle.",    
     colour: "#B5A180",
     client: "Macornette",
     ressources: ["Wordpress, Figma"],
@@ -127,10 +115,8 @@ const projects: Project[] = [
     title: "CSWITCH",
     year: 2022,
     status: "done",
-    descriptionEn:
+    description:
       "I co-created Colour Switch, a kid-friendly Roblox game that attracted over 4,000 visits. The focus was on creating an engaging and safe environment that emphasizes fun and interactive gameplay for young players.",
-      descriptionFr:
-      "J'ai co-créé Colour Switch, un jeu Roblox adapté aux enfants qui a attiré plus de 4 000 visites. L'accent a été mis sur la création d'un environnement attrayant et sûr qui met l'accent sur un jeu amusant et interactif pour les jeunes joueurs.",    
     colour: "#8F52BC",
     client: "Personal",
     ressources: ["LUAU, Roblox Studio, Figma, Canva"],
@@ -144,10 +130,8 @@ const projects: Project[] = [
     title: "DIGETO",
     year: 2024,
     status: "done",
-    descriptionEn:
+    description:
       "I created a visually engaging PowerPoint presentation and social media posts for DIGETO, focusing on delivering clear and impactful messaging that effectively communicated the brand's message.",
-      descriptionFr:
-      "J'ai créé une présentation PowerPoint visuellement attrayante et des posts sur les médias sociaux pour DIGETO, en me concentrant sur la diffusion d'un message clair et percutant qui communique efficacement le message de la marque.",    
     colour: "#E78927",
     client: "Deepak Peschard (CEO)",
     ressources: ["Figma", "Canva"],
@@ -161,10 +145,8 @@ const projects: Project[] = [
     title: "CHIENS EN CAV",
     year: 2025,
     status: "ongoing",
-    descriptionEn:
+    description:
       "I  created the brand identity for CHIENS EN CAVALE and developed a fully functional website. In addition to designing a cohesive visual identity, I integrated a Google Calendar to enable seamless reservations for dog walking services, ensuring an efficient and user-friendly booking process for both pet owners and the team.",
-      descriptionFr:
-      "J'ai créé l'identité de marque de CHIENS EN CAVALE et développé un site web entièrement fonctionnel. En plus de concevoir une identité visuelle cohérente, j'ai intégré un calendrier Google pour permettre des réservations transparentes pour les services de promenades de chiens, assurant un processus de réservation efficace et convivial à la fois pour les propriétaires d'animaux et pour l'équipe.",    
     colour: "#F393B1",
     client: "Louisiana Richard (President)",
     ressources: ["Wix, Canva"],
@@ -178,7 +160,6 @@ const projects: Project[] = [
 ];
 
 const ProjectList: React.FC = () => {
-  const { language } = useContext(LanguageContext);
   const [expandedProjectId, setExpandedProjectId] = useState<number | null>(
     null
   );
@@ -190,14 +171,11 @@ const ProjectList: React.FC = () => {
     setExpandedProjectId(null);
   };
 
-  //Translations
-  const projectHeader = language === 'en' ? 'Projects' : 'Projets';
-
   return (
     <div className="">
       <div className="flex font-semibold text-xl pt-5 sm:pt-20 pl-5 sm:pl-20">
         <h2 className="text-general-paragraphnum pr-1">[II]</h2>
-        <h2 className="text-general-subtext">{projectHeader}</h2>
+        <h2 className="text-general-subtext">Projects</h2>
       </div>
       <ul className="relative space-y-4 py-5 px-5 sm:px-20 mx-auto max-w-3xl">
         {projects.map((project) => (
@@ -258,7 +236,7 @@ const ProjectList: React.FC = () => {
                   expandedProjectId === project.id ? "text-white" : ""
                 }`}
               >
-                 {language === 'en' ? project.descriptionEn : project.descriptionFr} 
+                {project.description}
                 <div className="flex mt-2">
                   <p className="text-general-subtle mr-1">client </p>
                   {project.client}

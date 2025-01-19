@@ -1,9 +1,6 @@
-import React, { useState, useEffect, useContext } from 'react';
-import { LanguageContext } from '../contexts/LanguageContext';
+import React, { useState, useEffect } from 'react';
 
 const Header: React.FC = () => {
-  const {language} = useContext(LanguageContext);
-
   const greetings = [
     "Hello, I am",
     "Bonjour, je suis",
@@ -24,8 +21,6 @@ const Header: React.FC = () => {
     return () => clearInterval(intervalId);
   }, [greetings.length]);
 
-  const oneDesc = language === 'en' ? 'Highschool student and aspiring AI engineer — based in 🇫🇷' : "Lycéen et aspirant ingénieur dans l'IA — basé en 🇫🇷";
-
   return (
     <header className=" mt-10 sm:mt-20 px-5 sm:px-20 border-b-general-outline border-b-[0.5px] pb-10 sm:pb-20">
       <div className="relative h-[48px] overflow-hidden">
@@ -41,7 +36,7 @@ const Header: React.FC = () => {
         </p>
       </div>
       <h1 className="text-header-maintext  text-8xl sm:text-12xl font-bold leading-[0.9]">Julius</h1>
-      <p className="pt-3 sm:pt-0 text-header-subtext">{oneDesc}</p>
+      <p className="pt-3 sm:pt-0 text-header-subtext">Highschool student and aspiring AI engineer — based in 🇫🇷</p>
     </header>
   );
 };

@@ -1,5 +1,4 @@
-import React, {useContext} from "react";
-import { LanguageContext } from "../contexts/LanguageContext";
+import React from "react";
 import Timeline from "./Timeline";
 import Internships from "./Internships";
 
@@ -49,8 +48,6 @@ interface TimelineItem {
 }
 
 const Past: React.FC = () => {
-  const {language} = useContext(LanguageContext);
-
   const icons = [
     reactIcon,     // Primary framework
     tsIcon,        // Key technology (TypeScript)
@@ -122,26 +119,12 @@ const Past: React.FC = () => {
     },
   ];
 
-  //Translations
-  const pastHeader = language === 'en' ? 'Past' : "Passé";
-  const educatHeader = language === 'en' ? 'Education' : "Cursus";
-  const internHeader = language === 'en' ? 'Internships' : "Stages";
-  const aboutHeader = language === 'en' ? 'About me' : 'A propos'
-  const mainDesc = language === 'en' ? `I’m Julius, a 17-year-old high-school student from 🇫🇷, passionate about clean code, design, and efficient solutions.
-
-I aspire to excel in 🤖 AI, 📋 project management, and collaborating with top software companies.
-
-Outside coding, I enjoy 🏉, the Premier League ⚽, and staying active.`: `Je suis Julius, un lycéen de 17 ans originaire de 🇫🇷, passionné par le code propre, le design et les solutions efficaces.
-
-J'aspire à exceller dans 🤖 l'IA, 📋 la gestion de projet, et à collaborer avec les meilleures entreprises tech internationales.
-
-En dehors du codage, j'aime 🏉, la Premier League ⚽, et rester actif.`
   return (
     <section>
       <div className="font-semibold text-xl pt-10 sm:pt-20 sm:pl-20 sm:pr-20 border-b-[0.5px] border-b-general-outline">
         <div className="flex pb-5">
           <h2 className="text-general-paragraphnum pl-5 sm:pl-0 pr-1">[I]</h2>
-          <h2 className="text-general-subtext">{pastHeader}</h2>
+          <h2 className="text-general-subtext">Past</h2>
         </div>
         <div className="relative bg-about-container mx-auto max-w-2xl rounded-tl-3xl rounded-tr-3xl border-t-[12px] border-x-[12px] pl-10 pt-10 pr-10 border-t-about-glasscontainer border-x-about-glasscontainer shadow-inner double-border">
           <div
@@ -165,9 +148,14 @@ En dehors du codage, j'aime 🏉, la Premier League ⚽, et rester actif.`
                 "linear-gradient(to bottom, #3DB1D0 0%, #5C698D 50%, #2C446B 100%)",
             }}
           ></div>
-          <h2 className="text-general-subtext">{aboutHeader}</h2>
+          <h2 className="text-general-subtext">About me</h2>
           <p className="text-general-paragraphtext font-light text-sm">
-            {mainDesc}
+          I’m Julius, a 17-year-old high-school student from 🇫🇷, passionate about clean code, design, and efficient solutions.
+
+I aspire to excel in 🤖 AI, 📋 project management, and collaborating with top software companies.
+
+Outside coding, I enjoy 🏉, the Premier League ⚽, and staying active. <span className="italic">“Discipline is the bridge between goals and accomplishment.”</span>
+
           </p>
           <div className="py-4 grid grid-cols-7 gap-0">
             {icons.map((Icon, index) => (
@@ -184,12 +172,12 @@ En dehors du codage, j'aime 🏉, la Premier League ⚽, et rester actif.`
       </div>
       <div className="sm:mx-auto sm:max-w-2xl px-3 text-general-subtext sm:flex justify-center">
         <div className="border-l-[0.5px] border-b-[0.5px] border-l-general-outline border-b-general-outline py-5 px-5 sm:w-1/2">
-          <h2 className="text-lg font-semibold pb-4">{educatHeader}</h2>
+          <h2 className="text-lg font-semibold pb-4">Education</h2>
           <Timeline items={educationData} />
         </div>
         <div className="relative py-5 px-5 sm:w-1/2 bg-internships-sectionbg overflow-hidden">
         <img className="absolute bottom-20 w-140 h-auto blur-2xl" src={lShapeGradient} alt="" />
-          <h2 className="text-lg font-bold">{internHeader}</h2>
+          <h2 className="text-lg font-bold">Internships</h2>
             <Internships items={internshipData} />
         </div>
       </div>

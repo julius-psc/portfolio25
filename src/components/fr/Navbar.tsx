@@ -1,5 +1,4 @@
-import React, {useContext} from 'react';
-import { LanguageContext } from '../contexts/LanguageContext';
+import React from 'react';
 
 import copyIcon from '../assets/icons/copy-icon.svg';
 import successIcon from '../assets/icons/success-icon.svg';
@@ -11,7 +10,6 @@ import igIcon from '../assets/icons/social-icons/instagram-icon.svg';
 import linkIcon from '../assets/icons/social-icons/linkedin-icon.svg';
 
 const Navbar: React.FC = () => {
-  const {language} = useContext(LanguageContext);
   const [isCopied, setIsCopied] = React.useState(false);
 
   const copyEmail = () => {
@@ -28,8 +26,6 @@ const Navbar: React.FC = () => {
         console.error('Failed to copy: ', err);
       });
   };
-
-  const copiedSuccess = language === 'en' ? 'Copied!' : 'Copié!';
 
   return (
     <nav className="pl-6 pr-6 pt-8 sm:pl-6 sm:pr-6 sm:pt-2 lg:pl-20 lg:pr-20 lg:pt-10 sm:flex justify-between text-navbar-navtext font-light">
@@ -48,7 +44,7 @@ const Navbar: React.FC = () => {
           )}
         </button>
         <p className="text-sm sm:text-base">
-        {isCopied ? ` ${copiedSuccess}` : 'peschardjulius03@gmail.com'}
+          {isCopied ? 'Copied' : 'peschardjulius03@gmail.com'}
         </p>
         <a
           className="hover:opacity-40 transition-opacity duration-200"

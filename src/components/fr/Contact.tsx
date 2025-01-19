@@ -1,6 +1,4 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
-import { LanguageContext } from '../contexts/LanguageContext';
-
+import React, { useState, useRef, useEffect } from "react";
 import dragIcon from "../assets/icons/drag-icon.svg";
 import dragOut from "../assets/icons/drag-outline.svg";
 import dragArrow from "../assets/icons/drag-arrow.svg";
@@ -11,8 +9,6 @@ import igIcon from '../assets/icons/social-icons/instagram-icon.svg';
 import linkIcon from '../assets/icons/social-icons/linkedin-icon.svg';
 
 const Contact: React.FC = () => {
-  const {language} = useContext(LanguageContext);
-
   const [dragPosition, setDragPosition] = useState(0);
   const isDragging = useRef(false);
   const dragStartPos = useRef(0);
@@ -71,26 +67,20 @@ const Contact: React.FC = () => {
     dragStartPos.current = e.clientX;
   };
 
-  const contactHeader = language === 'en' ? 'Contact me' : 'Me contacter';
-  const moreInfo = language === 'en' ? 'Tell me about your next project' : 'Discutons de ton prochain projet';
-  const sendEmail = language === 'en' ? 'Send me an email' : 'Envoyez moi un email';
-  const socialsP = language === 'en' ? 'Socials' : 'Réseaux';
-
-
   return (
     <section className="mx-5 sm:mx-20 py-0 sm:py-5">
       <div className="flex font-semibold text-xl pt-5 sm:pl-0 sm:pt-20">
         <h2 className="text-general-paragraphnum pr-1">[III]</h2>
-        <h2 className="text-general-subtext">{contactHeader}</h2>
+        <h2 className="text-general-subtext">Contact me</h2>
       </div>
       <div className="">
           <h2 className="text-white font-semibold text-2xl sm:text-4xl my-2">
-            {moreInfo}
+            Tell me about your next project
           </h2>
           <div className="text-general-paragraphnum sm:flex  sm:justify-around">
             <div>
                 <div className="sm:block">
-                  <h3>{sendEmail}</h3>
+                  <h3>Send me an email</h3>
                   <a href={`mailto:${emailAddress}`} className="visible sm:hidden">
                   <div className="opacity-60 flex">
                     <p className="mr-1">link</p>
@@ -118,7 +108,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
             <div className="sm:mx-10 mx-0">
-              <h3 className="sm:mb-3">{socialsP}</h3>
+              <h3 className="sm:mb-3">Socials</h3>
               <div className="flex items-center space-x-2">
                 <a className='hover:opacity-40 transition-opacity duration-200' href="https://www.linkedin.com/in/julius-peschard-007822309/" target="_blank" rel="noopener noreferrer">
                     <img src={linkIcon} alt="LinkedIn icon" className='w-6 h-auto'/>
