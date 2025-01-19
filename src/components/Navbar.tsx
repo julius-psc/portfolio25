@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
   const copiedSuccess = language === 'en' ? 'Copied!' : 'Copié!';
 
   return (
-    <nav className="pl-6 pr-6 pt-8 sm:pl-6 sm:pr-6 sm:pt-2 lg:pl-20 lg:pr-20 lg:pt-10 sm:flex justify-between text-navbar-navtext font-light">
+    <nav className="pl-6 pr-6 pt-4 sm:pl-6 sm:pr-6 sm:pt-2 lg:pl-20 lg:pr-20 lg:pt-10 sm:flex justify-between text-navbar-navtext font-light">
 
       {/* Left side of the navbar */}
       <div className="flex items-center space-x-1">

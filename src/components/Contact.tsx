@@ -11,7 +11,7 @@ import igIcon from '../assets/icons/social-icons/instagram-icon.svg';
 import linkIcon from '../assets/icons/social-icons/linkedin-icon.svg';
 
 const Contact: React.FC = () => {
-  const {language} = useContext(LanguageContext);
+  const { language } = useContext(LanguageContext);
 
   const [dragPosition, setDragPosition] = useState(0);
   const isDragging = useRef(false);
@@ -63,10 +63,13 @@ const Contact: React.FC = () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [dragPosition]);
+  }, [dragPosition, language]);
 
   const handleMouseDown = (e: React.MouseEvent<HTMLImageElement>) => {
-    e.preventDefault();
+    // Prevent default behavior only on mobile screens
+    if (window.innerWidth > 300) {
+      e.preventDefault(); 
+    }
     isDragging.current = true;
     dragStartPos.current = e.clientX;
   };

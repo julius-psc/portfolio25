@@ -9,7 +9,7 @@ const LanguageToggle: React.FC = () => {
   };
 
   return (
-    <div className="space-x-2 text-xs pl-5 pt-6">
+    <div className="text-center sm:text-left space-x-2 text-xs pl-5 pt-4 sm:pt-6">
       <a 
         href="#" 
         onClick={handleLanguageChange} 
