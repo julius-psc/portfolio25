@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://julius-psc.github.io/portfolio25",
+  "homepage": "https://www.juliuspeschard.com",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
