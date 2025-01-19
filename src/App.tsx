@@ -11,7 +11,7 @@ function App() {
 
   return (
 
-      <div className='bg-general-background h-screen'>
+      <div className='bg-general-background h-screen overflow-x-hidden'>
         <Navbar />
         <Header />
         <Past />

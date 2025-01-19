@@ -19,7 +19,7 @@ const Internships: React.FC<InternshipsProps> = ({ items }) => {
           key={item.year}
           className="timeline-item pt-4 tablet:px-6 relative overflow-hidden"
         >
-          <div className="relative w-14 h-14  hover:w-full internship-item-content flex items-center bg-internships-interncontainer p-2 rounded-xl transition-all duration-300 ease-in-out group">
+          <div className="relative w-14 h-14 hover:w-full internship-item-content flex items-center bg-internships-interncontainer p-2 rounded-xl transition-all duration-300 ease-in-out group cursor-pointer">
             {item.logo && (
               <div className="flex-shrink-0">
                 <img
@@ -29,14 +29,16 @@ const Internships: React.FC<InternshipsProps> = ({ items }) => {
                 />
               </div>
             )}
-            <div className="flex ml-2 transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-              <div>
+            <div className="ml-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-hover:delay-200">
+              <div className="flex items-center whitespace-nowrap">
                 <h3 className="font-bold text-sm">{item.title}</h3>
                 {item.description && (
-                  <p className="text-xs">{item.description}</p>
+                  <p className="text-xs ml-2">{item.description}</p>
                 )}
               </div>
-              <p className="absolute right-0 top-4 text-md origin-center rotate-90">{item.year}</p>
+              <p className="absolute right-0 top-4 text-md origin-center rotate-90">
+                {item.year}
+              </p>
             </div>
           </div>
         </div>

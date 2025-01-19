@@ -181,7 +181,7 @@ const ProjectList: React.FC = () => {
         {projects.map((project) => (
           <li
             key={project.id}
-            className={`cursor-default px-3 sm:px-5 py-8 sm:py-6 rounded-md bg-about-container flex flex-col transition-all duration-700 ease-in-out ${
+            className={`cursor-pointer px-3 sm:px-5 py-8 sm:py-6 rounded-md bg-about-container flex flex-col transition-all duration-700 ease-in-out ${
               expandedProjectId === project.id ? "h-[700px]" : "h-[110px]"
             }`}
             onMouseEnter={() => handleMouseEnter(project.id)}
@@ -263,17 +263,17 @@ const ProjectList: React.FC = () => {
                     {project.link}
                   </a>
                 </div>
-                <div className="grid grid-cols-1 tablet:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="flex justify-center items-center">
                     <img
-                      className="hidden sm:visible max-w-full max-h-full"
+                      className=" hidden sm:block sm:max-w-full sm:max-h-full"
                       src={project.img1}
                       alt="project image 1"
                     />
                   </div>
                   <div className="flex justify-center items-center">
                     <img
-                      className="max-w-full smax-h-full"
+                      className=" max-w-full smax-h-full"
                       src={project.img2}
                       alt="project image 2"
                     />
