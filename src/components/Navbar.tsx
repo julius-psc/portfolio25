@@ -4,6 +4,11 @@ import copyIcon from '../assets/icons/copy-icon.svg';
 import successIcon from '../assets/icons/success-icon.svg';
 import resume25 from '../assets/25.pdf';
 
+import arrowIcon from '../assets/icons/social-icons/cv-link-icon.svg';
+import gitIcon from '../assets/icons/social-icons/github-icon.svg';
+import igIcon from '../assets/icons/social-icons/instagram-icon.svg';
+import linkIcon from '../assets/icons/social-icons/linkedin-icon.svg';
+
 const Navbar: React.FC = () => {
   const [isCopied, setIsCopied] = React.useState(false);
 
@@ -47,7 +52,7 @@ const Navbar: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/icons/cv-link-icon.svg" alt="Arrow that sends to resume icon" className="w-2" />
+          <img src={arrowIcon} alt="Arrow that sends to resume icon" className="w-2" />
         </a>
       </div>
       {/* Middle of the navbar */}
@@ -69,7 +74,7 @@ const Navbar: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/icons/linkedin-icon.svg" alt="LinkedIn icon" className="w-4 h-4" />
+          <img src={linkIcon} alt="LinkedIn icon" className="w-4 h-4" />
         </a>
         <a
           className="hover:opacity-40 transition-opacity duration-200"
@@ -77,7 +82,7 @@ const Navbar: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/icons/github-icon.svg" alt="GitHub icon" className="w-4 h-4" />
+          <img src={gitIcon} alt="GitHub icon" className="w-4 h-4" />
         </a>
         <a
           className="hover:opacity-40 transition-opacity duration-200"
@@ -85,7 +90,7 @@ const Navbar: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/icons/instagram-icon.svg" alt="Instagram icon" className="w-4 h-4" />
+          <img src={igIcon} alt="Instagram icon" className="w-4 h-4" />
         </a>
       </div>
     </nav>
