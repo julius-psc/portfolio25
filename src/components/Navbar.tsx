@@ -14,7 +14,8 @@ const Navbar: React.FC = () => {
   const {language} = useContext(LanguageContext);
   const [isCopied, setIsCopied] = React.useState(false);
 
-  const copyEmail = () => {
+  const copyEmail = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
     navigator.clipboard.writeText('peschardjulius03@gmail.com')
       .then(() => {
         setIsCopied(true);
@@ -32,19 +33,19 @@ const Navbar: React.FC = () => {
   const copiedSuccess = language === 'en' ? 'Copied!' : 'Copié!';
 
   return (
-    <nav className="pl-6 pr-6 pt-4 sm:pl-6 sm:pr-6 sm:pt-2 lg:pl-20 lg:pr-20 lg:pt-10 sm:flex justify-between text-navbar-navtext font-light">
+    <nav className="pl-6 pr-6 pt-14 sm:pl-6 sm:pr-6 sm:pt-2 lg:pl-20 lg:pr-20 lg:pt-10 sm:flex justify-between text-navbar-navtext font-light">
 
       {/* Left side of the navbar */}
-      <div className="flex items-center space-x-1">
+      <div className="flex items-center space-x-0 sm:space-x-1">
         <button
-          className="hover:opacity-40 transition-opacity duration-200"
+          className="hover:opacity-40 hidden sm:block transition-opacity duration-200"
           onClick={copyEmail}
           aria-label={isCopied ? 'Email copied' : 'Copy email to clipboard'}
         >
           {isCopied ? (
             <img src={successIcon} alt="Success icon" className="w-3 h-4 text-col" />
           ) : (
-            <img src={copyIcon} alt="Copy email to clipboard icon" className="w-3 h-4 text-col" />
+            <img src={copyIcon} alt="Copy email to clipboard icon" className="w-4 sm:w-3 sm:h-4 mr-3 sm:mr-0 text-col" />
           )}
         </button>
         <p className="text-sm sm:text-base">
@@ -56,7 +57,7 @@ const Navbar: React.FC = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={arrowIcon} alt="Arrow that sends to resume icon" className="w-2" />
+          <img src={arrowIcon} alt="Arrow that sends to resume icon" className="w-3 sm:w-2 sm:h-4 ml-2 sm:ml-0 " />
         </a>
       </div>
       {/* Middle of the navbar */}
