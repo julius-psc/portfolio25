@@ -11,7 +11,7 @@ import LanguageToggle from "./contexts/LanguageToggle";
 function App() {
   return (
     <LanguageProvider>
-      <div className="bg-general-background h-screen">
+      <div className="bg-general-background h-screen overflow-x-hidden">
         <LanguageToggle />
         <Navbar />
         <Header />
