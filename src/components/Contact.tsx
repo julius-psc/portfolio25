@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
                                 </a>
                 </div>
               <div className="py-2 hidden sm:block">
-                <div className="relative">
+                <div className="relative" onTouchStart={(e) => e.preventDefault()}>
                   <img ref={dragOutlineRef} src={dragOut} alt="Drag outline icon" />
                   <div
                     className="absolute top-3 left-3"
@@ -138,3 +138,4 @@ const Contact: React.FC = () => {
 };
 
 export default Contact;
+ 

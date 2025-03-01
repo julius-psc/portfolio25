@@ -13,6 +13,9 @@ module.exports = {
         '12xl': '12em',
         '14xl': '14em',
       },
+      aspectRatio: {
+        '16/9': '16 / 9',
+      },
       colors: {
         general: {
           background: '#0d1117',
