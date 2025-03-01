@@ -5,7 +5,7 @@ import dragIcon from "../assets/icons/drag-icon.svg";
 import dragOut from "../assets/icons/drag-outline.svg";
 import dragArrow from "../assets/icons/drag-arrow.svg";
 
-import arrowIcon from '../assets/icons/social-icons/arrow-icon.svg';
+// import arrowIcon from '../assets/icons/social-icons/arrow-icon.svg';
 import gitIcon from '../assets/icons/social-icons/github-icon.svg';
 import igIcon from '../assets/icons/social-icons/instagram-icon.svg';
 import linkIcon from '../assets/icons/social-icons/linkedin-icon.svg';
@@ -91,12 +91,12 @@ const Contact: React.FC = () => {
             <div>
                 <div className="sm:block">
                   <h3>{sendEmail}</h3>
-                  <a href={`mailto:${emailAddress}`} className="visible sm:hidden">
-                  <div className="opacity-60 flex">
-                    <p className="mr-1">link</p>
-                    <img src={arrowIcon} alt="Send Email" className="w-2 h-auto mr-2" />
-                  </div>
-                                </a>
+                  {/* <a href={`mailto:${emailAddress}`} className="visible sm:hidden">
+    <div className="opacity-60 flex">
+      <p className="mr-1">link</p>
+      <img src={arrowIcon} alt="Send Email" className="w-2 h-auto mr-2" />
+    </div>
+  </a> */}
                 </div>
               <div className="py-2 hidden sm:block">
                 <div className="relative" onTouchStart={(e) => e.preventDefault()}>
